@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://crimsoneclipse.pp.ua/sitemap.xml
