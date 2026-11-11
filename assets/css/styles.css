@@ -741,19 +741,19 @@ button {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: clamp(1rem, 2vw, 1.5rem);
-  
-  /* ОСЬ ГОЛОВНЕ: змушує всі елементи в сітці починатися з одного рівня */
-  align-items: start; 
+  align-items: stretch; /* Змушує всі картки в ряду бути однакової висоти */
 }
 
-/* 2. Картка (без рамок, без фону) */
+/* 2. Картка */
 .value-card {
   position: relative;
-  background: transparent; /* Прозорий фон */
-  border: none;            /* Жодних CSS-рамок */
-  box-shadow: none;        /* Жодних прямокутних тіней */
+  overflow: hidden;
+  border-radius: 12px;
+  /* Задаємо ідеальні пропорції 800x440 для ВСІХ карток */
+  aspect-ratio: 800 / 440; 
+  background: transparent;
   transition: transform 0.3s ease;
-  margin: 0; 
+  margin: 0;
   padding: 0;
 }
 
@@ -761,19 +761,22 @@ button {
 .value-card img {
   display: block;
   width: 100%;
-  height: auto;            /* Зберігає ідеальні пропорції без обрізання */
+  height: 100%;
+  /* Заповнює картку, обрізаючи зайві піксели, якщо вони є */
+  object-fit: cover; 
+  /* Центрує зображення, щоб обрізалося рівномірно з усіх боків */
+  object-position: center; 
   transition: transform 0.45s ease, filter 0.45s ease;
 }
 
-/* 4. Ефект при наведенні */
+/* 4. Ефекти при наведенні */
 .value-card:hover {
-  transform: translateY(-4px); /* Плавне підняття */
+  transform: translateY(-4px);
 }
 
 .value-card:hover img {
-  transform: scale(1.02);      /* Легке збільшення */
-  /* Тінь тепер обтікатиме саму намальовану рамку картинки, а не прямокутник */
-  filter: drop-shadow(0 15px 30px rgba(224, 85, 111, 0.4)); 
+  transform: scale(1.02);
+  filter: drop-shadow(0 15px 30px rgba(224, 85, 111, 0.4));
 }
 /* --- FAQ ------------------------------------------------------------------ */
 .faq-layout {
