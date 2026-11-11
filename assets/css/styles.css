@@ -743,9 +743,9 @@ button {
 }
 
 .value-card {
-  overflow: visible;
+  overflow: hidden;
   border: 1px solid var(--line-strong);
-  border-radius: 0;
+  border-radius: 12px;
   background: var(--surface);
   box-shadow: 0 24px 50px -34px rgba(0, 0, 0, 0.9);
   transition:
@@ -755,15 +755,19 @@ button {
 }
 
 .value-card img {
-  display: block;
   width: 100%;
   height: auto;
+  transition: transform 0.45s ease;
 }
 
 .value-card:hover {
   transform: translateY(-4px);
   border-color: var(--accent);
   box-shadow: 0 30px 60px -30px rgba(224, 85, 111, 0.55);
+}
+
+.value-card:hover img {
+  transform: scale(1.025);
 }
 
 /* --- FAQ ------------------------------------------------------------------ */
