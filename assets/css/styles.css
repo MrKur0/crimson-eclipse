@@ -741,6 +741,8 @@ button {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: clamp(1rem, 2vw, 1.5rem);
+  
+  /* ОСЬ ГОЛОВНЕ: змушує всі елементи в сітці починатися з одного рівня */
   align-items: start; 
 }
 
