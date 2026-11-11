@@ -749,30 +749,17 @@ button {
   border-radius: 12px;
   background: var(--surface);
   box-shadow: 0 24px 50px -34px rgba(0, 0, 0, 0.9);
-  transition:
-    transform 0.3s ease,
-    border-color 0.3s ease,
-    box-shadow 0.3s ease;
-  
-  /* Примусово задаємо фіксовані пропорції для ВСІХ карток, 
-     щоб вони були абсолютно однакові */
-  aspect-ratio: 800 / 440;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  aspect-ratio: 800 / 440; /* Фіксуємо розмір картки */
 }
 
 .value-card img {
   display: block;
-  width: 100%;
-  height: 100%;
-  
-  /* Cover змусить картинку заповнити весь блок. 
-     Якщо пропорції картинки трохи інші — вона обріжеться по краях, 
-     але жодних темних смуг не буде. */
-  object-fit: cover;
-  object-position: center;
-  
-  /* Трохи збільшуємо, щоб "з'їсти" темні рамки на самих файлах */
-  transform: scale(1.02);
-  
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  transform: scale(1.03); /* Трохи збільшуємо, щоб приховати краї */
   transition: transform 0.45s ease;
 }
 
