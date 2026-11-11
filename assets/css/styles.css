@@ -736,45 +736,38 @@ button {
   height: auto;
 }
 
-/* 1. Сітка */
 .values-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: clamp(1rem, 2vw, 1.5rem);
-  align-items: start; 
 }
 
-/* 2. Картка (БЕЗ CSS-рамки) */
 .value-card {
-  position: relative;
-  /* border: 1px solid ... — ПРИБРАНО */
-  /* background: var(--surface) — ПРИБРАНО, щоб не було видно фону за картинкою */
-  background: transparent;
-  border-radius: 12px; /* Залишаємо для тіні */
+  overflow: hidden;
+  border: 1px solid var(--line-strong);
+  border-radius: 12px;
+  background: var(--surface);
   box-shadow: 0 24px 50px -34px rgba(0, 0, 0, 0.9);
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Прибрали border-color */
-  margin: 0; 
-  padding: 0;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
-/* 3. Картинка */
 .value-card img {
-  display: block;
   width: 100%;
-  height: auto; /* Ідеальні пропорції, нічого не обрізається */
-  border-radius: 12px; /* Заокруглюємо саму картинку, щоб вона виглядала охайно */
+  height: auto;
   transition: transform 0.45s ease;
 }
 
-/* 4. Ефект при наведенні (залишаємо) */
 .value-card:hover {
   transform: translateY(-4px);
-  /* Прибираємо border-color, але робимо тінь яскравішою та червонішою */
+  border-color: var(--accent);
   box-shadow: 0 30px 60px -30px rgba(224, 85, 111, 0.55);
 }
 
 .value-card:hover img {
-  transform: scale(1.02); /* Легке збільшення при наведенні */
+  transform: scale(1.025);
 }
 /* --- FAQ ------------------------------------------------------------------ */
 .faq-layout {
